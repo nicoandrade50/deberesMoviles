@@ -9,6 +9,16 @@ tutorial
 create-react-app
 getting-started-with-react
 
+¿Qué es React?#
+React es una biblioteca Javascript para crear interfaces de usuario.
+React no es un framework (a diferencia de Angular o Vue, que tienen más opiniones).
+React es un proyecto de código abierto creado por Facebook.
+Está basado en componentes.
+
+Requisitos#
+node js: es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación JavaScript.
+npm: NPM (Node Package Manager) es un gestor de paquetes desarrollado en su totalidad bajo el lenguaje JavaScript por Isaac Schlueter, a través del cual podemos obtener cualquier librería con tan solo una sencilla línea de código, lo cual nos permitirá agregar dependencias de forma simple, distribuir paquetes y administrar eficazmente tanto los módulos como el proyecto a desarrollar en general. fuente
+
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
