@@ -36,9 +36,19 @@ npm: NPM (Node Package Manager) es un gestor de paquetes desarrollado en su tota
 Un módulo no es nada más que una unidad de código organizado en archivos o directorios, la cual puede ser exportada con facilidad para poder reutilizarse en otras partes de la aplicación. fuente
 External modules: Son, en esencia, los paquetes de terceros distribuidos a través de npm (aunque pueden provenir de otros repositorios). Estos paquetes se instalan como dependencias y, aunque aportan funcionalidad a la aplicación, no deben incluirse en el repositorio ya que no son parte de la misma.
 
-¿Cuál es tu enfoque preferido para estructurar componentes en React y por qué?
-¿Cómo describirías la diferencia entre JSX y HTML en términos de su funcionamiento y ventajas?
-¿Cuál es la característica de React que más te ha impresionado o impactado en tu desarrollo como desarrollador?
+semana 2 teoria 
+
+Teoría: Fundamentación conceptual que modela la dinámica de diseño, implementación y gestión de sistemas de software basados en componentes, abarcando paradigmas, principios y modelos de ciclo de vida.
+
+Reflexión: Capacidad intrínseca de un sistema para autoevaluarse y ajustar su estructura y comportamiento dinámicamente, adaptándose a cambios contextuales o requisitos del entorno.
+
+Analogía: Estrategia cognitiva que emplea metáforas o paralelismos con sistemas conocidos para ilustrar de manera accesible y contextualizada los conceptos abstractos inherentes al diseño y funcionamiento de componentes de software.
+
+Resumen: Síntesis integral que condensa los principios, técnicas y directrices esenciales relacionadas con la ingeniería de software orientada a componentes, extraídas de la literatura especializada sobre arquitectura de software y sistemas distribuidos.
+
+semana 2 preguntas
+
+
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
