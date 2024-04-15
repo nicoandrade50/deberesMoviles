@@ -48,6 +48,11 @@ Resumen: Síntesis integral que condensa los principios, técnicas y directrices
 
 semana 2 preguntas
 
+¿Qué significa "reflexión" en el contexto de la comunicación de componentes en software?
+
+A La capacidad de un sistema para adaptarse a cambios.
+B El intercambio de mensajes entre componentes.
+C La representación visual de la estructura del sistema.
 
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
