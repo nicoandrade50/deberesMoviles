@@ -53,7 +53,7 @@ semana 2 preguntas
 A La capacidad de un sistema para adaptarse a cambios.
 B El intercambio de mensajes entre componentes.
 C La representación visual de la estructura del sistema.
-
+ANSWER A.
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
