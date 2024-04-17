@@ -7,10 +7,10 @@ function App() {
 
   return (
       <>
-          { /*<h1>Props Communication</h1>*/ }
-          { /*<WillyWonka/>*/}
+          { <h1>Props Communication</h1> }
+          { <WillyWonka/>}
           { /*<h1>State Communication</h1>
-          <WillyWonkaState/>*/ }
+          <WillyWonkaState/> */}
           { <h1>Event Communication</h1>}
           {<WillyWonkaEvent/> }
       </>
