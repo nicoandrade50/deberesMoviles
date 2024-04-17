@@ -22,11 +22,30 @@ tutorial
 create-react-app
 getting-started-with-react
 
-¿Qué es React?#
-React es una biblioteca Javascript para crear interfaces de usuario.
-React no es un framework (a diferencia de Angular o Vue, que tienen más opiniones).
-React es un proyecto de código abierto creado por Facebook.
-Está basado en componentes.
+¿Cuál es la forma correcta de definir un componente funcional en React utilizando JSX?
+a class MyComponent extends React.Component {...}
+b function MyComponent() {...}
+c const MyComponent = () => {...} 
+d const MyComponent extends React.Component {...}
+ANSWER C
+
+
+¿Qué hace JSX en React?
+a Define estilos para los componentes.
+b Crea componentes de React.
+cPermite escribir JavaScript dentro de HTML.
+dControla el flujo de datos dentro de la aplicación.
+
+ANSWER C
+
+¿Cuál es la principal diferencia entre un componente funcional y un componente de clase en React?
+a Los componentes de clase no pueden contener métodos.
+bLos componentes funcionales no pueden aceptar props.
+c Los componentes funcionales no tienen estado (state).
+d Los componentes de clase se definen usando una sintaxis más corta. 
+
+ANSWER C
+
 
 Requisitos#
 node js: es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación JavaScript.
@@ -54,6 +73,24 @@ A La capacidad de un sistema para adaptarse a cambios.
 B El intercambio de mensajes entre componentes.
 C La representación visual de la estructura del sistema.
 ANSWER A.
+
+
+¿Qué método de ciclo de vida se utiliza principalmente para realizar solicitudes de red o inicializar el estado de un componente en React?
+a componentDidMount
+b componentWillUnmount
+c componentDidUpdate
+d componentWillReceiveProps
+
+ANSWER A
+
+¿Cuál de los siguientes métodos se utiliza para pasar datos de un componente padre a un componente hijo en React?
+a setState
+bprops
+c getDerivedStateFromProps
+d render
+
+ANSWER B
+
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
