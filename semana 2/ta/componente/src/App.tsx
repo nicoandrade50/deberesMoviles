@@ -1,53 +1,28 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface ProduccionState {
-  produccion: number;
-  produciendo: boolean;
+interface MountingProps {
+  productName: string;
 }
 
-class ProduccionComponent extends Component<{}, ProduccionState> {
-  productionInterval?: NodeJS.Timeout;
+const MountingComponent: React.FC<MountingProps> = ({ productName }) => {
+  const [productionStatus, setProductionStatus] = useState('Initializing production...');
 
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      produccion: 0,
-      produciendo: false
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProductionStatus('Production in progress...');
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer); // Cleanup function to clear the timer on unmount
     };
-  }
+  }, []);
 
-  handleInicioProduccion = () => {
-    if (!this.state.produciendo) {
-      this.setState({ produciendo: true });
-      // Iniciar la simulación de incremento de producción cada segundo
-      this.productionInterval = setInterval(() => {
-        this.setState(prevState => ({
-          produccion: prevState.produccion + 1
-        }));
-      }, 1000);
-    }
-  };
+  return (
+    <div>
+      <h2>Production status {productName}:</h2>
+      <p>{productionStatus}</p>
+    </div>
+  );
+};
 
-  handleDetenerProduccion = () => {
-    if (this.state.produciendo) {
-      this.setState({ produciendo: false });
-      // Detener la simulación de producción
-      if (this.productionInterval) {
-        clearInterval(this.productionInterval);
-      }
-    }
-  };
-
-  render() {
-    return (
-      <div>
-        <h2>Estado actual de producción:</h2>
-        <p>{this.state.produccion}</p>
-        <button onClick={this.handleInicioProduccion}>Iniciar Producción</button>
-        <button onClick={this.handleDetenerProduccion}>Detener Producción</button>
-      </div>
-    );
-  }
-}
-
-export default ProduccionComponent;
+export default MountingComponent;
