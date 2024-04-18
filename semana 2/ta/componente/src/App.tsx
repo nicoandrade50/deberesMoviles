@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface ProduccionState {
+  produccion: number;
+  produciendo: boolean;
 }
 
-export default App
+class ProduccionComponent extends Component<{}, ProduccionState> {
+  productionInterval?: NodeJS.Timeout;
+
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      produccion: 0,
+      produciendo: false
+    };
+  }
+
+  handleInicioProduccion = () => {
+    if (!this.state.produciendo) {
+      this.setState({ produciendo: true });
+      // Iniciar la simulación de incremento de producción cada segundo
+      this.productionInterval = setInterval(() => {
+        this.setState(prevState => ({
+          produccion: prevState.produccion + 1
+        }));
+      }, 1000);
+    }
+  };
+
+  handleDetenerProduccion = () => {
+    if (this.state.produciendo) {
+      this.setState({ produciendo: false });
+      // Detener la simulación de producción
+      if (this.productionInterval) {
+        clearInterval(this.productionInterval);
+      }
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Estado actual de producción:</h2>
+        <p>{this.state.produccion}</p>
+        <button onClick={this.handleInicioProduccion}>Iniciar Producción</button>
+        <button onClick={this.handleDetenerProduccion}>Detener Producción</button>
+      </div>
+    );
+  }
+}
+
+export default ProduccionComponent;
