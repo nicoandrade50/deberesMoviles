@@ -33,3 +33,28 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+
+function App () {
+
+const handleClick = (e) => {
+
+e.stopPropagation ();
+alert('Propagation stopped!');
+
+};
+
+return (
+<div onclick={() => alert('This message will not be displayed')}>
+
+<button onClick={handleClick}>Click here</button>
+
+</div>
+
+);
+
+}

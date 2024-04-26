@@ -10,10 +10,8 @@ export const COLORS: string[] = [
     "red", "orange",
     "yellow", "green",
     "blue", "violet",
-    "grey" "white"
+    "grey", "white"
 ];
-
-
 
 
 function App() {
