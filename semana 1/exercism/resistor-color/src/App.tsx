@@ -13,6 +13,7 @@ export const COLORS: string[] = [
     "grey", "white"
 ];
 
+
 function App() {
     const code = colorCode("red");
     console.log(code);
