@@ -13,8 +13,7 @@ export const COLORS: string[] = [
     "grey", "white"
 ];
 
-
-function App() {
+const ColorCodeComponent: React.FC = () => {
     const code = colorCode("red");
     console.log(code);
 
@@ -23,6 +22,6 @@ function App() {
             <h1>Color Code</h1>
         </div>
     );
-}
+};
 
-export default App;
+export default ColorCodeComponent;
