@@ -1,38 +1,18 @@
-import react from 'react':
+import React from 'react';
 
-function App() {
-  let friendName : string= 'Alice'
-  let dialogue: string;
+export function twoFer(name = 'you'): string {
+  return `One for ${name}, one for me.`;
+}
 
-  if (friendName !== 'do-yun') {
-
-
-  } else {
-
-    dialogue = 'one for you, one for me'
-  }
-
-
+const App: React.FC = () => {
+  const result = twoFer(); // Llamada a la función twoFer sin argumentos
   
-  
-    return `One for ${friendName}, one for me.`;
-  }
-
-  
-
-
   return (
-  
-      <div>
-        <h1>
-        cookie
-        </h1>
-        <p>conversation</p>
-      </div>
-      
-  )
+    <div>
+      <h1>Two-Fer</h1>
+      <p>{result}</p>
+    </div>
+  );
+};
 
-
-export default App
-
-
+export default App;

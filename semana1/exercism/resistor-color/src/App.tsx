@@ -15,11 +15,12 @@ export const COLORS: string[] = [
 
 const ColorCodeComponent: React.FC = () => {
     const code = colorCode("red");
-    console.log(code);
+    const codeMessage = code !== null ? `The color code for red is ${code}.` : "Color not found.";
 
     return (
         <div>
             <h1>Color Code</h1>
+            <p>{codeMessage}</p>
         </div>
     );
 };
