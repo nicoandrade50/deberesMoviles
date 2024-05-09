@@ -1,6 +1,6 @@
 import React from 'react';
 
-export enum ResistorValues {
+enum ResistorValues {
   black = 0,
   brown = 1,
   red = 2,
@@ -15,12 +15,12 @@ export enum ResistorValues {
 
 type Color = keyof typeof ResistorValues;
 
-export function decodedValue([first, second]: [Color, Color]): number {
+function decodedValue([first, second]: [Color, Color]): number {
   return Number(`${ResistorValues[first]}${ResistorValues[second]}`);
 }
 
 const App: React.FC = () => {
-  const value = decodedValue(['red', 'green']);
+  const value: number = decodedValue(['red', 'green']);
   console.log(value);
 
   return (
