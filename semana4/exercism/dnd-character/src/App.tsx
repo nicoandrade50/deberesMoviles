@@ -1,6 +1,4 @@
-// DnDCharacter.tsx
-
-import React from 'react';
+import React, { useState } from 'react';
 
 interface AbilityScores {
   strength: number;
@@ -26,36 +24,45 @@ const generateRandomDiceRollScore = (): number => {
 };
 
 const DnDCharacter: React.FC = () => {
-  const strength = generateAbilityScore();
-  const dexterity = generateAbilityScore();
-  const constitution = generateAbilityScore();
-  const intelligence = generateAbilityScore();
-  const wisdom = generateAbilityScore();
-  const charisma = generateAbilityScore();
-  const hitpoints = 10 + getModifierFor(constitution);
+  const [abilityScores, setAbilityScores] = useState<AbilityScores | null>(null);
 
-  const abilityScores: AbilityScores = {
-    strength,
-    dexterity,
-    constitution,
-    intelligence,
-    wisdom,
-    charisma,
-    hitpoints
+  const generateScores = () => {
+    const strength = generateAbilityScore();
+    const dexterity = generateAbilityScore();
+    const constitution = generateAbilityScore();
+    const intelligence = generateAbilityScore();
+    const wisdom = generateAbilityScore();
+    const charisma = generateAbilityScore();
+    const hitpoints = 10 + getModifierFor(constitution);
+
+    const newAbilityScores: AbilityScores = {
+      strength,
+      dexterity,
+      constitution,
+      intelligence,
+      wisdom,
+      charisma,
+      hitpoints
+    };
+
+    setAbilityScores(newAbilityScores);
   };
 
   return (
     <div>
       <h1>D&D Character</h1>
-      <ul>
-        <li>Strength: {abilityScores.strength}</li>
-        <li>Dexterity: {abilityScores.dexterity}</li>
-        <li>Constitution: {abilityScores.constitution}</li>
-        <li>Intelligence: {abilityScores.intelligence}</li>
-        <li>Wisdom: {abilityScores.wisdom}</li>
-        <li>Charisma: {abilityScores.charisma}</li>
-        <li>Hitpoints: {abilityScores.hitpoints}</li>
-      </ul>
+      {abilityScores && (
+        <ul>
+          <li>Strength: {abilityScores.strength}</li>
+          <li>Dexterity: {abilityScores.dexterity}</li>
+          <li>Constitution: {abilityScores.constitution}</li>
+          <li>Intelligence: {abilityScores.intelligence}</li>
+          <li>Wisdom: {abilityScores.wisdom}</li>
+          <li>Charisma: {abilityScores.charisma}</li>
+          <li>Hitpoints: {abilityScores.hitpoints}</li>
+        </ul>
+      )}
+      <button onClick={generateScores}>Generate Ability Scores</button>
     </div>
   );
 };

@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+                 Fábrica de Consolas de Juegos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+     Cambios Realizados:
+Integración de Zustand: Se introdujo la biblioteca Zustand para gestionar el estado de la aplicación de manera más eficiente y escalable.
+ 
 
-- Configure the top-level `parserOptions` property like this:
+Definición del Estado y Acciones: Se definieron las interfaces ConsoleState y ConsoleActions para representar el estado de las consolas y las acciones que pueden realizar sobre ellas. Luego, se combinaron en un tipo ConsoleStore que representa tanto el estado como las acciones disponibles.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+Creación del Almacenamiento: Se utilizó la función create de Zustand para crear un almacenamiento que contiene el estado inicial y las acciones definidas.
+
+
+
+Utilización del Almacenamiento en Componentes: En el componente ConsoleFactory, se utilizó el gancho useConsoleStore para acceder al estado y las acciones del almacenamiento. Esto permite que el componente interactúe con el estado global de las consolas.
+
+
+
+Resumen  :
+Este ejercicio presenta una aplicación de "Fábrica de Consolas de Juegos" que utiliza la biblioteca Zustand para gestionar el estado de las consolas producidas, distribuidas y en stock. Se define un estado inicial que incluye el total producido, total distribuido y consolas en stock, junto con acciones para producir, distribuir y reabastecer consolas.
+
+
+
+
+
+Los cambios realizados en el ejercicio incluyen la integración de Zustand para la gestión del estado, la definición de interfaces para el estado y las acciones, la creación del almacenamiento con Zustand, y la utilización del almacenamiento en los componentes de React para interactuar con el estado global de las consolas.

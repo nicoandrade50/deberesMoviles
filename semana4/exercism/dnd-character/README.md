@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+                                          D&D CHARACTER
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+El componente DnDCharacter utiliza el estado local de React (useState) para almacenar las puntuaciones de habilidad del personaje. Cuando el usuario hace clic en el botón "Generate Ability Scores", se generan nuevas puntuaciones de habilidad utilizando funciones como generateAbilityScore y getModifierFor, que simulan los lanzamientos de dados y calculan los modificadores de habilidad.
+
+
+
+
+Las puntuaciones de habilidad generadas se muestran en la interfaz de usuario junto con los puntos de golpe calculados. Si no se han generado puntuaciones de habilidad, se muestra un botón para permitir al usuario generarlas.
+
+
+
+
+Los cambios realizados en este ejercicio se centran principalmente en la implementación de la generación de puntuaciones de habilidad para un personaje de D&D y su visualización en la interfaz de usuario. 
+
+
+
+Se utiliza el gancho useState para manejar el estado local de las puntuaciones de habilidad y se define una serie de funciones para generar las puntuaciones de habilidad de manera aleatoria y calcular los puntos de golpe. Además, se utiliza JSX para definir la estructura y el diseño de la interfaz de usuario, que incluye un título, una lista de puntuaciones de habilidad y un botón para generar nuevas puntuaciones. 
+
+
+Finalmente, se exporta el componente DnDCharacter para que pueda ser utilizado en otros archivos de la aplicación.
