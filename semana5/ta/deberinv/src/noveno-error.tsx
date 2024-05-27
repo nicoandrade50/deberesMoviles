@@ -18,3 +18,4 @@ const NotUsingUseMemo: React.FC = () => {
     </div>
   );
 };
+
