@@ -15,6 +15,7 @@ const RATIOS: Planets = {
   neptune: 164.79132
 };
 
+
 const AgeCalculator: React.FC = () => {
   const [planet, setPlanet] = useState<string>('earth');
   const [seconds, setSeconds] = useState<number>(0);
