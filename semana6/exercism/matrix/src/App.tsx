@@ -1,9 +1,10 @@
-// src/App.tsx
+
 
 import React, { useState } from 'react';
 import { Matrix } from './Matrix';
 
 const App: React.FC = () => {
+  
   const [input, setInput] = useState<string>('1 2 3\n4 5 6\n7 8 9');
   const [matrix, setMatrix] = useState<Matrix>(new Matrix(input));
 
