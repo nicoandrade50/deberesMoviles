@@ -3,7 +3,6 @@ import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 
-
 import {
   ErrorComponent,
   ThemedLayoutV2,

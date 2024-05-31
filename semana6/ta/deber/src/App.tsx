@@ -1,71 +1,54 @@
 import React from "react";
-import { Refine } from "@refinedev/core";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { ThemedLayoutV2, ThemedSiderV2 } from "@refinedev/antd";
-import "@refinedev/antd/dist/reset.css";
-import routerBindings, { NavigateToResource } from "@refinedev/react-router-v6";
-import dataProvider from "@refinedev/simple-rest";
-import { App as AntdApp } from "antd";
-import { Header } from "@refinedev/antd"; 
-import { ColorModeContextProvider } from "./contexts/color-mode"; 
-import { EmployeeList } from "./pages/employee/EmployeeList"; 
-import { CustomerList } from "./pages/customer/CustomerList"; 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Refine, notificationProvider, Layout, ErrorComponent } from "@refinedev/antd";
+import { dataProvider } from "@refinedev/simple-rest";
+import { EmployeeList, EmployeeCreate, EmployeeEdit, EmployeeShow } from "./components/employee";
+import { CustomerList, CustomerCreate, CustomerEdit, CustomerShow } from "./components/customer";
+import "antd/dist/antd.css";
 
-function App() {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <ColorModeContextProvider>
-        <AntdApp>
-          <Refine
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
-            routerProvider={routerBindings}
-            resources={[
-              {
-                name: "employees",
-                list: "/employees",
-                meta: {
-                  canDelete: true,
-                },
-              },
-              {
-                name: "customers",
-                list: "/customers",
-                meta: {
-                  canDelete: true,
-                },
-              },
-            ]}
-            options={{
-              syncWithLocation: true,
-              warnWhenUnsavedChanges: true,
-              useNewQueryKeys: true,
-            }}
-          >
-            <Routes>
-              <Route
-                element={
-                  <ThemedLayoutV2
-                    Header={() => <Header />}
-                    Sider={(props) => <ThemedSiderV2 {...props} />}
-                  >
-                    <Outlet />
-                  </ThemedLayoutV2>
-                }
-              >
-                <Route
-                  index
-                  element={<NavigateToResource resource="employees" />}
-                />
-                <Route path="/employees" element={<EmployeeList />} />
-                <Route path="/customers" element={<CustomerList />} />
-                <Route path="*" element={<div>404 Not Found</div>} />
-              </Route>
-            </Routes>
-          </Refine>
-        </AntdApp>
-      </ColorModeContextProvider>
+      <Refine
+        dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+        notificationProvider={notificationProvider}
+        Layout={Layout}
+        catchAll={<ErrorComponent />}
+        resources={[
+          {
+            name: "employees",
+            list: EmployeeList,
+            create: EmployeeCreate,
+            edit: EmployeeEdit,
+            show: EmployeeShow,
+          },
+          {
+            name: "customers",
+            list: CustomerList,
+            create: CustomerCreate,
+            edit: CustomerEdit,
+            show: CustomerShow,
+          },
+        ]}
+        Title={() => <div>My App</div>}
+      >
+        <Routes>
+          <Route path="/employees">
+            <Route index element={<EmployeeList />} />
+            <Route path="create" element={<EmployeeCreate />} />
+            <Route path="edit/:id" element={<EmployeeEdit />} />
+            <Route path="show/:id" element={<EmployeeShow />} />
+          </Route>
+          <Route path="/customers">
+            <Route index element={<CustomerList />} />
+            <Route path="create" element={<CustomerCreate />} />
+            <Route path="edit/:id" element={<CustomerEdit />} />
+            <Route path="show/:id" element={<CustomerShow />} />
+          </Route>
+        </Routes>
+      </Refine>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
