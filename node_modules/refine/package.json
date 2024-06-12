@@ -1,0 +1,16 @@
+{
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "name": "refine",
+  "description": "A lightweight, extensible object query tool for JavaScript / JSON objects",
+  "version": "0.0.1-alpha",
+  "repository": {
+    "url": "https://github.com/kevinswiber/refine"
+  },
+  "main": "./refine.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

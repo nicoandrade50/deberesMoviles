@@ -2,7 +2,6 @@ import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
-
 import {
   ErrorComponent,
   ThemedLayoutV2,
@@ -10,8 +9,6 @@ import {
   useNotificationProvider,
 } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
-
-
 
 import routerBindings, {
   CatchAllNavigate,
@@ -26,26 +23,26 @@ import { authProvider } from "./authProvider";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
+  CharacterCreate,
+  CharacterEdit,
+  CharacterList,
+  CharacterShow,
+} from "./pages/characthers";
 import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "./pages/categories";
+  ScenesCreate,
+  ScenesEdit,
+  ScenesList,
+  ScenesShow,
+} from "./pages/scenes";
+import {
+  MoviesCreate,
+  MoviesEdit,
+  MoviesList,
+  MoviesShow,
+} from "./pages/movies";
 import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
-import {
-  ProductCreate,
-  ProductEdit,
-  ProductList,
-  ProductShow,
-} from "./pages/products";
 
 function App() {
   return (
@@ -62,31 +59,31 @@ function App() {
                 authProvider={authProvider}
                 resources={[
                   {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
+                    name: "characthers",
+                    list: "/characthers",
+                    create: "/characthers/create",
+                    edit: "/characthers/edit/:id",
+                    show: "/characthers/show/:id",
                     meta: {
                       canDelete: true,
                     },
                   },
                   {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
+                    name: "scenes",
+                    list: "/scenes",
+                    create: "/scenes/create",
+                    edit: "/scenes/edit/:id",
+                    show: "/scenes/show/:id",
                     meta: {
                       canDelete: true,
                     },
                   },
                   {
-                    name: "products",
-                    list: "/products",
-                    create: "/products/create",
-                    edit: "/products/edit/:id",
-                    show: "/products/show/:id",
+                    name: "movies",
+                    list: "/movies",
+                    create: "/movies/create",
+                    edit: "/movies/edit/:id",
+                    show: "/movies/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -96,7 +93,7 @@ function App() {
                   syncWithLocation: true,
                   warnWhenUnsavedChanges: true,
                   useNewQueryKeys: true,
-                  projectId: "jvtjPJ-6K0lgf-peDCqJ",
+                  projectId: "X8HkhZ-mOSJrU-vBrFq4",
                 }}
               >
                 <Routes>
@@ -107,7 +104,7 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayoutV2
-                          Header={() => <Header sticky />}
+                          Header={Header}
                           Sider={(props) => <ThemedSiderV2 {...props} fixed />}
                         >
                           <Outlet />
@@ -117,25 +114,27 @@ function App() {
                   >
                     <Route
                       index
-                      element={<NavigateToResource resource="blog_posts" />}
+                      element={<NavigateToResource resource="characthers" />}
                     />
-                    <Route path="/blog-posts">
-                      <Route index element={<BlogPostList />} />
-                      <Route path="create" element={<BlogPostCreate />} />
-                      <Route path="edit/:id" element={<BlogPostEdit />} />
-                      <Route path="show/:id" element={<BlogPostShow />} />
+                    <Route path="/characthers">
+                      <Route index element={<CharacterList />} />
+                      <Route path="create" element={<CharacterCreate />} />
+                      <Route path="edit/:id" element={<CharacterEdit />} />
+                      <Route path="show/:id" element={<CharacterShow />} />
                     </Route>
-                    <Route path="/categories">
-                      <Route index element={<CategoryList />} />
-                      <Route path="create" element={<CategoryCreate />} />
-                      <Route path="edit/:id" element={<CategoryEdit />} />
-                      <Route path="show/:id" element={<CategoryShow />} />
+
+                    <Route path="/movies">
+                      <Route index element={<MoviesList />} />
+                      <Route path="create" element={<MoviesCreate />} />
+                      <Route path="edit/:id" element={<MoviesEdit />} />
+                      <Route path="show/:id" element={<MoviesShow />} />
                     </Route>
-                    <Route path="/products">
-                      <Route index element={<ProductList />} />
-                      <Route path="create" element={<ProductCreate />} />
-                      <Route path="edit/:id" element={<ProductEdit />} />
-                      <Route path="show/:id" element={<ProductShow />} />
+
+                    <Route path="/scenes">
+                      <Route index element={< ScenesList />} />
+                      <Route path="create" element={< ScenesCreate />} />
+                      <Route path="edit/:id" element={< ScenesEdit />} />
+                      <Route path="show/:id" element={< ScenesShow />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

@@ -19,8 +19,8 @@ export const ProductEdit = () => {
     <Edit saveButtonProps={saveButtonProps} isLoading={formLoading}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label="Title"
-          name="title"
+          label="Name"
+          name="name"
           rules={[{ required: true, message: "Please input the title!" }]}
         >
           <Input />
@@ -43,7 +43,7 @@ export const ProductEdit = () => {
         <Form.Item
           label="Status"
           name="status"
-          initialValue="draft"
+        
           rules={[{ required: true, message: "Please select a status!" }]}
         >
           <Select
@@ -60,3 +60,6 @@ export const ProductEdit = () => {
     </Edit>
   );
 };
+
+
+

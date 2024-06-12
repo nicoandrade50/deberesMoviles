@@ -13,8 +13,8 @@ export const ProductCreate = () => {
     <Create saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label="Title"
-          name="title"
+          label="Nmae"
+          name="name"
           rules={[{ required: true, message: "Please input the title!" }]}
         >
           <Input />

@@ -27,7 +27,7 @@ import {
       <List>
         <Table {...tableProps} rowKey="id">
           <Table.Column dataIndex="id" title="ID" />
-          <Table.Column dataIndex="title" title="Title" />
+          <Table.Column dataIndex="name" title="Name" />
           <Table.Column
             dataIndex="description"
             title="Description"
@@ -53,6 +53,8 @@ import {
             title="Created at"
             render={(value: any) => <DateField value={value} />}
           />
+
+          
           <Table.Column
             title="Actions"
             dataIndex="actions"
