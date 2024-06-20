@@ -35,11 +35,11 @@ import {
   ScenesShow,
 } from "./pages/scenes";
 import {
-  MoviesCreate,
-  MoviesEdit,
-  MoviesList,
-  MoviesShow,
-} from "./pages/movies";
+  FilmCreate,
+  FilmEdit,
+  FilmList,
+  FilmShow,
+} from "./pages/film";
 import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
@@ -53,7 +53,7 @@ function App() {
           <AntdApp>
             <DevtoolsProvider>
               <Refine
-                dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+                dataProvider={dataProvider("https://localhost:8081")}
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
                 authProvider={authProvider}
@@ -79,11 +79,11 @@ function App() {
                     },
                   },
                   {
-                    name: "movies",
-                    list: "/movies",
-                    create: "/movies/create",
-                    edit: "/movies/edit/:id",
-                    show: "/movies/show/:id",
+                    name: "film",
+                    list: "/film",
+                    create: "/film/create",
+                    edit: "/film/edit/:id",
+                    show: "/film/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -123,11 +123,11 @@ function App() {
                       <Route path="show/:id" element={<CharacterShow />} />
                     </Route>
 
-                    <Route path="/movies">
-                      <Route index element={<MoviesList />} />
-                      <Route path="create" element={<MoviesCreate />} />
-                      <Route path="edit/:id" element={<MoviesEdit />} />
-                      <Route path="show/:id" element={<MoviesShow />} />
+                    <Route path="/film">
+                      <Route index element={< FilmList />} />
+                      <Route path="create" element={< FilmCreate />} />
+                      <Route path="edit/:id" element={< FilmEdit />} />
+                      <Route path="show/:id" element={<FilmShow />} />
                     </Route>
 
                     <Route path="/scenes">

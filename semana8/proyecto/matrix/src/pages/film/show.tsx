@@ -5,7 +5,7 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-export const MoviesShow: React.FC = () => {
+export const  FilmShow: React.FC = () => {
   const { queryResult } = useShow({});
   const { data, isLoading } = queryResult;
 

@@ -2,7 +2,7 @@
 import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, InputNumber } from "antd";
 
-export const MoviesEdit: React.FC = () => {
+export const  FilmEdit: React.FC = () => {
   const { formProps, saveButtonProps } = useForm({});
 
   return (

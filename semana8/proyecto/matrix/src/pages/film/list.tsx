@@ -9,7 +9,7 @@ import {
 import type { BaseRecord } from "@refinedev/core";
 import { Space, Table } from "antd";
 
-export const MoviesList: React.FC = () => {
+export const  FilmList: React.FC = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,
   });
